@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vitima {
+  id String @id @default(uuid()) @map("_id") // Definindo id como UUID
+  paisDeOrigem String  @db.VarChar
+  nomeCompleto String   @db.VarChar
+  nacionalidade String   @db.VarChar
+  altura Int   @db.Integer
+  genero String @db.VarChar
+  idade Int   @db.Integer
+  autorDoCrime String @db.VarChar
+  PaisVistoPorUltimo String @db.VarChar
+  statusDaVitima String @db.VarChar
+  foto Foto?
+}
+
+model Foto {
+  id String @id @default(uuid())
+  foto Bytes 
+  vitima Vitima? @relation(fields: [vitimaId], references: [id])
+  vitimaId String @unique @default(uuid()) // Torna o campo único e usa UUID como padrão
+}
