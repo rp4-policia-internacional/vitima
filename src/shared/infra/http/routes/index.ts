@@ -4,6 +4,6 @@ import { Router } from 'express';
 
 const router = Router();
 
-router.post('vitima', vitimaRoutes);
+router.use("/vitima", vitimaRoutes);
 
 export default router;

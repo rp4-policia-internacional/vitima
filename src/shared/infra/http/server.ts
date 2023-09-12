@@ -6,7 +6,7 @@ import "dotenv/config";
 import routes from "./routes";
 import AppError from "@shared/Errors/AppError";
 
-import "@shared/infra/prisma";
+import "@shared/infra/prisma";//inicializar o banco
 import "@shared/container";
 
 import 'reflect-metadata';

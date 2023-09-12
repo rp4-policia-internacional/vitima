@@ -10,23 +10,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Vitima {
-  id String @id @default(uuid()) @map("_id") // Definindo id como UUID
-  paisDeOrigem String  @db.VarChar
-  nomeCompleto String   @db.VarChar
-  nacionalidade String   @db.VarChar
-  altura Int   @db.Integer
+
+model Vitima{
+  id String @id @default(uuid()) 
+  paisDeOrigem String @db.VarChar
+  nomeCompleto String @db.VarChar
+  nacionalidade String @db.VarChar
+  altura Int @db.Integer
   genero String @db.VarChar
-  idade Int   @db.Integer
+  idade Int @db.Integer
   autorDoCrime String @db.VarChar
   PaisVistoPorUltimo String @db.VarChar
   statusDaVitima String @db.VarChar
-  foto Foto?
-}
-
-model Foto {
-  id String @id @default(uuid())
-  foto Bytes 
-  vitima Vitima? @relation(fields: [vitimaId], references: [id])
-  vitimaId String @unique @default(uuid()) // Torna o campo único e usa UUID como padrão
 }

@@ -1,12 +1,11 @@
 import CreateVitimaService from "@modules/vitima/services/CreateVitimaService";
-import {Request, Response} from "express";
 import { container } from "tsyringe";
+import { Request, Response } from "express";
 
-
-export default class VitimaController{
-    public async create(req: Request,res: Response ): Promise<Response>{
+export default class VitimaController {
+    public async create(req: Request, res: Response): Promise<Response>{
         const createVitima = container.resolve(CreateVitimaService);
-
+        
         const {
             paisDeOrigem,
             nomeCompleto,
@@ -16,10 +15,10 @@ export default class VitimaController{
             idade,
             autorDoCrime,
             PaisVistoPorUltimo,
-            statusDaVitima
+            statusDaVitima,
           } = req.body;
-          
-          const createdVitima = await createVitima.execute({
+
+        const createdVitima = await createVitima.execute({
             id: "", // Preencha com o valor apropriado, ou deixe vazio se for um UUID gerado automaticamente
             paisDeOrigem,
             nomeCompleto,
@@ -30,13 +29,8 @@ export default class VitimaController{
             autorDoCrime,
             PaisVistoPorUltimo,
             statusDaVitima,
-            foto: {
-                create: {
-                  foto: Buffer.from([]), // Preencha com um valor apropriado para a foto, ou deixe um Buffer vazio
-                },
-              },
-            });
-        return res.json(createVitima).status(201).send();
-        
+        });
+
+        return res.status(201).json(createdVitima);
     }
 }

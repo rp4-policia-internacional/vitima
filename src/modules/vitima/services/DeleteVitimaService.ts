@@ -14,7 +14,7 @@ class DeleteVitimaService{
         const findVitima = await this.vitimaRepository.findById(id);
         if(!findVitima) {
 
-            throw new AppError("Vitima nao encontrada",404);
+             throw new AppError("Vitima nao encontrada",404);
 
         }
         await this.vitimaRepository.delete(id);

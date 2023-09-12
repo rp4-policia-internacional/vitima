@@ -1,4 +1,3 @@
-import { Foto } from "@prisma/client";
 
 export default interface ICreateVitimaDTO {
     id: string;
@@ -11,11 +10,4 @@ export default interface ICreateVitimaDTO {
     autorDoCrime: string;
     PaisVistoPorUltimo: string;
     statusDaVitima: string;
-
-    foto: {
-        create: {
-          foto: Buffer; // Se você estiver armazenando fotos como Buffer
-        };
-      };
-    //foto: Foto;  s
 }
