@@ -12,7 +12,7 @@ datasource db {
 
 
 model Vitima{
-  id String @id @default(uuid()) 
+  id               String   @id @default(uuid())
   paisDeOrigem String @db.VarChar
   nomeCompleto String @db.VarChar
   nacionalidade String @db.VarChar

@@ -25,6 +25,7 @@ export default class VitimaRepository implements IVitimaRepository {
       }
       
     public async listAll(): Promise<VitimaEntity[]> {
+      
      return await prisma.vitima.findMany();
     }
 

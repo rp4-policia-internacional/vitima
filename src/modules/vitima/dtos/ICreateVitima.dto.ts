@@ -1,6 +1,6 @@
 
 export default interface ICreateVitimaDTO {
-    id: string;
+    //id: string;
     paisDeOrigem: string;
     nomeCompleto: string;
     nacionalidade: string;

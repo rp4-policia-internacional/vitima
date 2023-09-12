@@ -1,6 +1,6 @@
 
 class VitimaEntity {
-    id: string;
+   id: string;
     paisDeOrigem: string;
     nomeCompleto: string;
     nacionalidade: string;
@@ -11,8 +11,9 @@ class VitimaEntity {
     PaisVistoPorUltimo: string;
     statusDaVitima: string;
    
+   
     constructor(data: {
-      id: string;
+     id: string;
       paisDeOrigem: string;
       nomeCompleto: string;
       nacionalidade: string;
@@ -24,7 +25,7 @@ class VitimaEntity {
       statusDaVitima: string;
       }) 
       {
-      this.id = data.id;
+     this.id = data.id;
       this.paisDeOrigem = data.paisDeOrigem;
       this.nomeCompleto = data.nomeCompleto;
       this.nacionalidade = data.nacionalidade;
