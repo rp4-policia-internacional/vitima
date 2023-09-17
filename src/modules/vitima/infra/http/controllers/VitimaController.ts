@@ -6,40 +6,48 @@ import FindOneVitimaService from "@modules/vitima/services/FindOneVitimaService"
 import ListVitimaService from "@modules/vitima/services/ListVitimaService";
 import UpdateVitimaService from "@modules/vitima/services/UpdateVitimaService";
 
+// lida com solicitações HTTP relacionadas às vítimas em nosso sistema. 
+
 
 export default class VitimaController {
     public async create(req: Request, res: Response): Promise<Response>{
+        
+        
         const createVitima = container.resolve(CreateVitimaService);
         
         const {
-            paisDeOrigem,
+            id,
+            id_paisDeOrigem,
+            id_autorDoCrime,
             nomeCompleto,
             nacionalidade,
             altura,
             genero,
             idade,
-            autorDoCrime,
-            PaisVistoPorUltimo,
+            paisVistoPorUltimo,
             statusDaVitima,
+            foto,
           } = req.body;
+          const alturaFormatada = parseFloat(altura).toFixed(2);
 
         const createdVitima = await createVitima.execute({
-           //id: "",// Preencha com o valor apropriado, ou deixe vazio se for um UUID gerado automaticamente
-            paisDeOrigem,
+            id,
+            id_paisDeOrigem,
+            id_autorDoCrime,
             nomeCompleto,
             nacionalidade,
             altura,
             genero,
             idade,
-            autorDoCrime,
-            PaisVistoPorUltimo,
+            paisVistoPorUltimo,
             statusDaVitima,
+            foto,
         });
 
         return res.status(201).json(createdVitima);
     }
 
-
+//delete pelo id
     public async delete(req: Request, res: Response): Promise<Response> {
         const deleteVitima = container.resolve(DeleteVitimaService);
 
@@ -61,7 +69,6 @@ export default class VitimaController {
         const gotOneVitima = await getOneVitima.execute(
             id
         );
-
         return res.json(gotOneVitima).status(200).send();
 
     }
@@ -78,28 +85,33 @@ export default class VitimaController {
         const updateVitima = container.resolve(UpdateVitimaService);
 
         const {
-            paisDeOrigem,
+            id,
+            id_paisDeOrigem,
+            id_autorDoCrime,
             nomeCompleto,
             nacionalidade,
             altura,
             genero,
             idade,
-            autorDoCrime,
-            PaisVistoPorUltimo,
-            statusDaVitima,} = req.body;
+            paisVistoPorUltimo,
+            statusDaVitima,
+            foto,  
+        
+        } = req.body;
 
        
         const createVitima = await updateVitima.execute({
-            id: "",// Insira um valor apropriado aqui ou deixe em branco se for um UUID gerado automaticamente
-            paisDeOrigem,
+            id,
+            id_paisDeOrigem,
+            id_autorDoCrime,
             nomeCompleto,
             nacionalidade,
             altura,
             genero,
             idade,
-            autorDoCrime,
-            PaisVistoPorUltimo,
+            paisVistoPorUltimo,
             statusDaVitima,
+            foto,
         });
 
         return res.json(createVitima).status(201).send();

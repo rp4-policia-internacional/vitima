@@ -1,6 +1,8 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,16 +12,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Vitima{
-  id               String   @id @default(uuid())
-  paisDeOrigem String @db.VarChar
-  nomeCompleto String @db.VarChar
-  nacionalidade String @db.VarChar
-  altura Int @db.Integer
-  genero String @db.VarChar
-  idade Int @db.Integer
-  autorDoCrime String @db.VarChar
-  PaisVistoPorUltimo String @db.VarChar
-  statusDaVitima String @db.VarChar
+  id                      String   @id @default(uuid())
+  id_paisDeOrigem         String @db.VarChar                                                                                               //cpais
+  id_autorDoCrime         String @db.VarChar       
+  nomeCompleto            String @db.VarChar
+  nacionalidade           String @db.VarChar
+  altura                  Decimal @db.Decimal
+  genero                  String @db.VarChar
+  idade                   Int @db.Integer                                                                                    //id do criminoso
+  paisVistoPorUltimo      String @db.VarChar
+  statusDaVitima          String @db.VarChar
+  foto                    String @db.VarChar
 }

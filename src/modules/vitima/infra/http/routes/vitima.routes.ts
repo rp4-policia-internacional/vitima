@@ -1,6 +1,6 @@
 import { Router } from "express";
 import VitimaController from "../controllers/VitimaController";
-
+//conjunto de rotas relacionada as operações da vitima
 const vitimaRoutes = Router();
 
 const controller = new VitimaController();

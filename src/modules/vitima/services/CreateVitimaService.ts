@@ -3,6 +3,12 @@ import IVitimaRepository from "../repositories/IVitimaRepository";
 import ICreateVitimaDTO from "../dtos/ICreateVitima.dto";
 import VitimaEntity from "../entities/Vitima.entity";
 
+
+//interagem com 
+//o repositório de vítimas para realizar operações como criação, exclusão, consulta, listagem e 
+//atualização de vítimas em sua aplicação
+
+
 @injectable()
 class CreateVitimaService{
     constructor(

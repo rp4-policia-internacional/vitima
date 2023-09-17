@@ -15,6 +15,7 @@ class UpdateVitimaService {
         const findVitima = await this.vitimaRepository.findById(data.id);
 
         if(!findVitima) {
+            
             throw new AppError("Vitima não encontrada", 404);
         }
 

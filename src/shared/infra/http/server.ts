@@ -10,7 +10,7 @@ import "@shared/infra/prisma";//inicializar o banco
 import "@shared/container";
 
 import 'reflect-metadata';
-
+//este arquivo é responsável por configurar um servidor
 
 const app = express ();
 
