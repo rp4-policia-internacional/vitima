@@ -11,7 +11,7 @@ export default interface ICreateVitimaDTO {
     altura:                  Decimal;
     genero:                  string;
     idade:                   number;                                                                              //id do criminoso
-    paisVistoPorUltimo:     string;
+    id_paisVistoPorUltimo:     string;
     statusDaVitima:          string;
     foto:                    string;
 }

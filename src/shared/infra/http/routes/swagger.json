@@ -68,7 +68,7 @@
                                     "idade": {
                                         "type": "number"
                                     },
-                                    "paisVistoPorUltimo": {
+                                    "id_paisVistoPorUltimo": {
                                         "type": "string"
                                     },
                                     "statusDaVitima": {
@@ -118,7 +118,7 @@
                                     "idade": {
                                         "type": "number"
                                     },
-                                    "paisVistoPorUltimo": {
+                                    "id_paisVistoPorUltimo": {
                                         "type": "string"
                                     },
                                     "statusDaVitima": {

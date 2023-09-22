@@ -21,7 +21,7 @@ model Vitima{
   altura                  Decimal @db.Decimal
   genero                  String @db.VarChar
   idade                   Int @db.Integer                                                                                    //id do criminoso
-  paisVistoPorUltimo      String @db.VarChar
+  id_paisVistoPorUltimo      String @db.VarChar
   statusDaVitima          String @db.VarChar
   foto                    String @db.VarChar
 }

@@ -24,7 +24,7 @@ export default class VitimaController {
             altura,
             genero,
             idade,
-            paisVistoPorUltimo,
+            id_paisVistoPorUltimo,
             statusDaVitima,
             foto,
           } = req.body;
@@ -39,7 +39,7 @@ export default class VitimaController {
             altura,
             genero,
             idade,
-            paisVistoPorUltimo,
+            id_paisVistoPorUltimo,
             statusDaVitima,
             foto,
         });
@@ -93,7 +93,7 @@ export default class VitimaController {
             altura,
             genero,
             idade,
-            paisVistoPorUltimo,
+            id_paisVistoPorUltimo,
             statusDaVitima,
             foto,  
         
@@ -109,7 +109,7 @@ export default class VitimaController {
             altura,
             genero,
             idade,
-            paisVistoPorUltimo,
+            id_paisVistoPorUltimo,
             statusDaVitima,
             foto,
         });

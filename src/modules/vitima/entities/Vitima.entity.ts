@@ -10,7 +10,7 @@ class VitimaEntity {
     altura:                  Decimal;  
     genero:                  string;
     idade:                   number;                                                                              //id do criminoso
-    paisVistoPorUltimo:     string;
+    id_paisVistoPorUltimo:     string;
     statusDaVitima:          string;
     foto:                    string;
 
@@ -24,7 +24,7 @@ class VitimaEntity {
     altura:                  Decimal;  
     genero:                  string;
     idade:                   number;                                                                              //id do criminoso
-    paisVistoPorUltimo:     string;
+    id_paisVistoPorUltimo:     string;
     statusDaVitima:          string;
     foto:                    string;
       }) 
@@ -37,7 +37,7 @@ class VitimaEntity {
       this.altura = data.altura;
       this.genero = data.genero;
       this.idade = data.idade;
-      this.paisVistoPorUltimo = data.paisVistoPorUltimo;
+      this.id_paisVistoPorUltimo = data.id_paisVistoPorUltimo;
       this.statusDaVitima = data.statusDaVitima;
       this.foto = data.foto;
     }
